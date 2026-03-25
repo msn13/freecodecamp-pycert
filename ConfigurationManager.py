@@ -47,6 +47,7 @@ Volume: high
 For testing the code, you should create a dictionary named test_settings to store some user configuration preferences.
 """
 
+
 def add_setting(settings, keyval):
     key = keyval[0].lower()
     val = keyval[1].lower()
@@ -68,6 +69,7 @@ def update_setting(settings, keyval):
     else:
         return f"Setting '{key}' does not exist! Cannot update a non-existing setting."
 
+
 def delete_setting(settings, key):
     key = key.lower()
     if key in settings:
@@ -75,6 +77,7 @@ def delete_setting(settings, key):
         return f"Setting '{key}' deleted successfully!"
     else:
         return "Setting not found!"
+
 
 def view_settings(settings):
     formatted_items = ""
@@ -90,9 +93,9 @@ def view_settings(settings):
 test_settings = dict()
 test_settings['theme'] = 'dark'
 test_settings['notifications'] = 'enabled'
-print(add_setting(test_settings, ('theme','light')))
-print(add_setting(test_settings, ('menu','enabled')))
-print(update_setting( test_settings,('theme','light')))
-print(update_setting(test_settings, ('notifications','enabled')))
+print(add_setting(test_settings, ('theme', 'light')))
+print(add_setting(test_settings, ('menu', 'enabled')))
+print(update_setting(test_settings, ('theme', 'light')))
+print(update_setting(test_settings, ('notifications', 'enabled')))
 print(view_settings(test_settings))
-print(delete_setting( test_settings,'theme'))
+print(delete_setting(test_settings, 'theme'))
